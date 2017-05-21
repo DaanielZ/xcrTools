@@ -1,0 +1,173 @@
+name: xcrTools
+main: pl.xcrafters.xcrtools.ToolsPlugin
+version: 1.0
+author: defabricated
+soft-depends: [ScoreboardAPI, xcrDrop, PacketAPI]
+commands:
+    clear:
+        description: Czyszczenie ekwipunku.
+        aliases: [ci, clearinventory, clearinv]
+        permission: tools.clear
+        usage: "§9Poprawne uzycie: §b/clear [nick]"
+    spawner:
+        description: Zmiana typu spawnera.
+        permission: tools.spawner
+        usage: "§9Poprawne uzycie: §b/spawner <typ>"
+    item:
+        description: Otrzymywanie przedmiotow.
+        aliases: [i]
+        permission: tools.item
+        usage: "§9Poprawne uzycie: §b/item <typ[:data]> [ilosc]"
+    give:
+        description: Otrzymywanie przedmiotow.
+        permission: tools.give
+        usage: "§9Poprawne uzycie: §b/give <gracz> <typ[:data]> [ilosc]"
+    rename:
+        description: Zmiana nazwy przedmiotu.
+        permission: tools.rename
+        usage: "§9Poprawne uzycie: §b/rename <nazwa>"
+    heal:
+        description: Uleczanie graczy.
+        permission: tools.heal
+        usage: "§9Poprawne uzycie: §b/heal <nick>"
+    repair:
+        description: Naprawianie przedmiotow.
+        permission: tools.repair
+        usage: "§9Poprawne uzycie: §b/repair [nick] <hand/armor/all>"
+    hat:
+        description: Zakladanie blokow na glowe.
+        permission: tools.hat
+        usage: "§9Poprawne uzycie: §b/hat [nick]"
+    me:
+        description: ...
+    kill:
+        description: ...
+    head:
+        description: Spawnowanie glow gracza.
+        permission: tools.head
+        usage: "§9Poprawne uzycie: §b/head [nick]"
+    tppos:
+        description: Teleportacja na wybrane koordynaty.
+        permission: tools.tppos
+        usage: "§9Poprawne uzycie: §b/tppos <x> [y] <z>"
+    top:
+        description: Teleportacja na najwyzszy blok.
+        permission: tools.top
+        usage: "§9Poprawne uzycie: §b/tppos <x> [y] <z>"
+    enchant:
+        description: Nakladanie zaklec na przedmioty.
+        permission: tools.enchant
+        usage: "§9Poprawne uzycie: §b/enchant <zaklecie> [poziom]"
+    speed:
+        description: Ustawianie predkosci poruszania sie.
+        permission: tools.speed
+        usage: "§9Poprawne uzycie: §b/speed <predkosc> [nick]"
+    compass:
+        description: Otrzymujesz kompas.
+        permission: tools.compass
+        usage: "§9Poprawne uzycie: §b/compass"
+    knock:
+        description: Otrzymujesz patyk z zakleciem knockback.
+        permission: tools.knock
+        usage: "§9Poprawne uzycie: §b/knock"
+    exp: 
+        description: Ustawianie doswiadczenia innym graczom.
+        aliases: [xp]
+        permission: tools.exp
+        usage: "§9Poprawne uzycie: §b/exp <set/add/remove> [nick] <ilosc[L]>"
+    spawnmob:
+        description: Spawnowanie mobow.
+        permission: tools.spawnmob
+        usage: "§9Poprawne uzycie: §b/spawnmob <mob>"
+    afk:
+        description: Sprawdzanie ilosci wykopanych blokow na AFK.
+        permission: tools.afk
+        usage: "§9Poprawne uzycie: §b/afk <nick>"
+permissions:
+    tools.clear:
+        description: Dostep do komendy /clear.
+        default: op
+    tools.clear.others:
+        description: Mozliwosc czyszczenia ekwipunku innym graczom.
+        default: op
+    tools.spawner:
+        description: Dostep do komendy /spawner.
+        default: op
+    tools.item:
+        description: Dostep do komendy /item.
+        default: op
+    tools.give:
+        description: Dostep do komendy /give.
+        default: op
+    tools.rename:
+        description: Dostep do komendy /rename.
+        default: op
+    tools.heal:
+        description: Dostep do komendy /heal.
+        default: op
+    tools.heal.others:
+        description: Mozliwosc uleczania innych graczy.
+        default: op
+    tools.repair:
+        description: Dostep do komendy /repair.
+        default: op
+    tools.repair.others:
+        description: Mozliwosc naprawiania ekwipunku innym graczom.
+        default: op
+    tools.hat:
+        description: Dostep do komendy /hat.
+        default: op
+    tools.hat.others:
+        description: Mozliwosc zakladania blokow na glowe innym graczom.
+        default: op
+    tools.head:
+        description: Dostep do komendy /head.
+        default: op
+    tools.tppos:
+        description: Dostep do komendy /tppos.
+        default: op
+    tools.top:
+        description: Dostep do komendy /top.
+        default: op
+    tools.enchant:
+        description: Dostep do komendy /enchant.
+        default: op
+    tools.speed:
+        description: Dostep do komendy /speed.
+        default: op
+    tools.speed.others:
+        description: Mozliwosc ustawiania predkosci poruszania sie innym graczom.
+        default: op
+    tools.chest.silent:
+        description: Ciche otwieranie skrzynek.
+        default: false
+    tools.chest.blocked:
+        description: Otwieranie zablokowanych skrzynek.
+        default: false
+    tools.items.without-lore:
+        description: Spawnowanie przedmiotow bez opisu.
+        default: false
+    tools.no-head-drop:
+        description: Brak dropu glowy przy smierci gracza.
+        default: op
+    tools.compass:
+        description: Dostep do komendy /compass.
+        default: op
+    tools.knock:
+        description: Dostep do komendy /knock.
+        default: op
+    tools.exp:
+        description: Dostep do komendy /exp.
+        default: op
+    tools.spawnmob:
+        description: Dostep do komendy /spawnmob.
+        default: op
+    tools.mobs.without-lore:
+        description: Spawnowanie mobow bez nazwy nad glowa.
+        default: false
+    tools.items.see-lore:
+        description: Mozliwosc zobaczenia podpisanych itemow.
+        default: false
+    tools.afk:
+        description: Dostep do komendy /afk.
+        default: op

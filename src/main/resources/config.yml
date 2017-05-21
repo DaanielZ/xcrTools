@@ -1,0 +1,8 @@
+config:
+    death:
+        head: true
+        lightning: true
+    punch-disabled: true
+    nether-pvp-disabled: true
+    afk:
+        kick-seconds: 300
